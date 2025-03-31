@@ -27,7 +27,7 @@ jobs:
       - name: Prepare deployment artifact
         run: |
           mkdir -p deployment
-          cp -r * deployment/
+          cp -R * deployment/
           cd deployment
           zip -r ../deployment-${{ github.sha }}.zip .
 
