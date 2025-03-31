@@ -26,10 +26,7 @@ jobs:
 
       - name: Prepare deployment artifact
         run: |
-          mkdir -p deployment
-          cp -R * deployment/
-          cd deployment
-          zip -r ../deployment-${{ github.sha }}.zip .
+          zip -r deployment-${{ github.sha }}.zip 
 
       - name: Upload artifact to S3
         run: |
