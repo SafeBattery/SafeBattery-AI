@@ -26,7 +26,7 @@ jobs:
 
       - name: Prepare deployment artifact
         run: |
-          zip -r deployment-${{ github.sha }}.zip 
+          zip -r deployment-${{ github.sha }}.zip .
 
       - name: Upload artifact to S3
         run: |
