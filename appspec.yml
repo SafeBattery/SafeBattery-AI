@@ -3,6 +3,12 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/flask_test  # 배포할 경로로 수정
+permissions:
+- object: /home/ubuntu
+  pattern: "**"
+  owner: ubuntu
+  group: ubuntu
+
 hooks:
   AfterInstall:
     - location: codedeploy/install_dependencies.sh
