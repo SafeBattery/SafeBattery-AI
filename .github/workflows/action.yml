@@ -24,6 +24,12 @@ jobs:
         with:
           python-version: '3.13'
 
+      - name: Create .env file
+        run: |
+          echo "MYSQL_URL=${{ secrets.MYSQL_URL }}" > .env
+          echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> .env
+          echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> .env
+
       - name: Prepare deployment artifact
         run: |
           zip -r deployment-${{ github.sha }}.zip .
