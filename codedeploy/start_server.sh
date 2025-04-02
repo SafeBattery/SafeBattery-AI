@@ -16,5 +16,5 @@ fi
 sudo pkill -9 -f gunicorn
 
 # 새로운 gunicorn 프로세스 백그라운드 실행 및 PID 기록
-nohup gunicorn --workers 3 --bind 0.0.0.0:8000 flask_test:app > gunicorn.log 2>&1 &
+nohup gunicorn --workers 2 --bind 0.0.0.0:8000 flask_test:app > gunicorn.log 2>&1 &
 echo $! > gunicorn.pid
